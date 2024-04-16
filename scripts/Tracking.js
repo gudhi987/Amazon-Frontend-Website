@@ -21,7 +21,7 @@ function renderTrackingHTML()
     let diffDays=(arrivalDate-currTime)/(1000*60*60*24);
     // console.log('Gap between arrival and Curr Time: ',diffDays);
 
-    let widthPercentage=((timeForDelivery-diffDays)/timeForDelivery)*100;
+    let widthPercentage=Math.max(5,((timeForDelivery-diffDays)/timeForDelivery)*100);
 
     if(widthPercentage<=0)
     {

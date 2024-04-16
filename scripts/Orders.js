@@ -172,6 +172,22 @@ trackingHiddenButtons.forEach((trackingHiddenButton) => {
     });
 });
 
+const trackingButtons=document.querySelectorAll('.tracking');
+trackingButtons.forEach((trackingButton) => {
+    trackingButton.addEventListener('click',()=> {
+        let orderIndex=trackingButton.dataset.orderIndex;
+        let productIndex=trackingButton.dataset.productIndex;
+        orderIndex=Number(orderIndex);
+        productIndex=Number(productIndex);
+        const orderPlacedDate=new Date(orders[orderIndex].orderPlacedDate);
+        clickStatus.orderPlacedDate=orderPlacedDate;
+        const arrivalDate=arrivalDateCalc(new Date(orders[orderIndex].orderPlacedDate),orders[orderIndex].products[productIndex].deliveryType);
+
+        clickStatus.orderIndex = orderIndex,clickStatus.productIndex=productIndex,clickStatus.arrivalDate=arrivalDate;
+        localStorage.setItem('clickStatus',JSON.stringify(clickStatus));
+    });
+});
+
 
 // Handling hamburger menu  
 
