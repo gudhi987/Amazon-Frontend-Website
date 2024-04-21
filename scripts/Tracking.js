@@ -21,9 +21,11 @@ function renderTrackingHTML()
     let diffDays=(arrivalDate-currTime)/(1000*60*60*24);
     // console.log('Gap between arrival and Curr Time: ',diffDays);
 
-    let widthPercentage=Math.max(5,((timeForDelivery-diffDays)/timeForDelivery)*100);
+    let widthPercentage=Math.min(Math.max(5,((timeForDelivery-diffDays)/timeForDelivery)*100),100);
 
-    if(widthPercentage<=0)
+    console.log(widthPercentage);
+
+    if(widthPercentage==100)
     {
         document.querySelector('.progress-bar > h3:nth-child(2)').classList.add('progress-stepper');
         document.querySelector('.progress-bar > h3:nth-child(3)').classList.add('progress-stepper');
@@ -39,6 +41,11 @@ function renderTrackingHTML()
     document.querySelector('.product-quantity').innerHTML = `Quantity: ${orders[orderIndex].products[productIndex].quantity}`;
     document.querySelector('.product-image').src = `${orders[orderIndex].products[productIndex].product.image}`;
     document.querySelector('.progress-indicator').style.width=`${widthPercentage}%`;
+
+    if(widthPercentage==100)
+    {
+        document.querySelector('.arrival-date').innerHTML = `Delivered on ${days[arrivalDate.getDay()]}, ${months[arrivalDate.getMonth()]} ${arrivalDate.getDate()}`;
+    }
 }
 renderTrackingHTML();
 
