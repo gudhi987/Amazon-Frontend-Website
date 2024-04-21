@@ -13,7 +13,7 @@ function addHTMLWhenCartIsEmpty() {
         document.querySelector('.products').innerHTML = 
         `
             <p>Your cart is empty.</p>
-            <a class="view-products" href="amazon.html">
+            <a class="view-products" href="index.html">
                 View products
             </a>
         `;
