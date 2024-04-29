@@ -98,6 +98,24 @@ main {
     background-color: #F7FAFA;
 }
 
+
+.view-products {
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 1rem;
+
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(247, 202, 0);
+}
+
+.view-products:hover {
+    background-color: rgba(247, 202, 0, 0.732);
+    cursor: pointer;
+}
+
+
 @media screen and (max-width: 800px) {
     .item-section {
         grid-template-columns: 120px 1fr;

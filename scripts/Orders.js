@@ -30,6 +30,24 @@ function renderOrders()
 {
     let ordersSection=document.querySelector('main');
     ordersSection.innerHTML=`<h2>Your Orders</h2>`;
+
+    // Handling the emtpy orders case
+
+    if(orders.length===0)
+    {
+        console.log("You have not placed an order yet.");
+        ordersSection.innerHTML += 
+
+        `
+            <p>You have not placed an order yet.</p>
+            <a class="view-products" href="index.html">
+                View products
+            </a>
+        `;
+
+        return ;
+    }
+
     orders.forEach((order,orderIndex) => {
         // console.log(order);
         const currDate=new Date(order.orderPlacedDate);
