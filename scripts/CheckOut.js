@@ -116,24 +116,6 @@ const typeToDeliveryDate = {
 
 const productInfos = Array.from(document.querySelectorAll('.product-info'));
 
-let deliveryType=[];
-
-if(localStorage.getItem('deliveryTypes') && JSON.parse(localStorage.getItem('deliveryTypes')).length>0)
-{
-    deliveryType=JSON.parse(localStorage.getItem('deliveryTypes'));
-}
-else 
-{
-    if(localStorage.getItem('deliveryTypes') && JSON.parse(localStorage.getItem('deliveryTypes')).length===0)
-    {
-        localStorage.removeItem('deliveryTypes');
-    }
-    for(let i=0;i<cart.items.length;i++)
-    {
-        deliveryType.push(1);
-    }
-}
-
 
 function renderDeliveryTypes() {
     // console.log("Rendering delivery types ......");

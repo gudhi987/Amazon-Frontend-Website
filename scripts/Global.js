@@ -5,6 +5,8 @@ const cart= JSON.parse(localStorage.getItem('cart')) || {
     items : []
 };
 
+let deliveryType=JSON.parse(localStorage.getItem('deliveryTypes')) || [];
+
 // Orders
 
 const orders= JSON.parse(localStorage.getItem('orders')) || [];

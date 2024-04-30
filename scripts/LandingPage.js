@@ -213,8 +213,11 @@ addToCartButtons.forEach((button,buttonIndex) => {
                 product : product,
                 quantity : quantity_selected
             });
+
+            deliveryType.push(1);
         }
 
+        localStorage.setItem('deliveryTypes',JSON.stringify(deliveryType));
         localStorage.setItem('cart',JSON.stringify(cart));
         renderCartEleCount(cart);
     });
