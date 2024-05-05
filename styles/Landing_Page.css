@@ -72,7 +72,7 @@
     opacity: 0;
 }
 .add-to-cart-animation {
-    animation: addTOCartAnimation 1s ease-in 1 forwards;
+    animation: addTOCartAnimation 500ms ease-in 1 forwards;
 }
 .add-to-cart p {
     margin: 0;

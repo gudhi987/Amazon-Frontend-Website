@@ -187,6 +187,10 @@ addToCartButtons.forEach((button,buttonIndex) => {
 
         quantitySelectors[buttonIndex].nextElementSibling.classList.add('add-to-cart-animation');
 
+        setTimeout(() => {
+            quantitySelectors[buttonIndex].nextElementSibling.classList.remove('add-to-cart-animation');
+        },500);
+
         cart.totalQuantity+=quantity_selected;
 
         let isMatching=false;
