@@ -19,13 +19,13 @@ function addHTMLWhenCartIsEmpty() {
         `;
         orderButton.style.opacity=0.5;
         orderButton.style.cursor='not-allowed';
-        orderButton.querySelector('a').style.zIndex=-10;
+        orderButton.querySelector('a').style.visibility='hidden';
     }
     else 
     {
         orderButton.style.opacity=1;
         orderButton.style.cursor='pointer';
-        orderButton.querySelector('a').style.zIndex=10;
+        orderButton.querySelector('a').style.visibility='visible';
     }
 }
 
