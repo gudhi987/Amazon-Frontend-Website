@@ -82,14 +82,14 @@ function renderOrders()
             products+=
             `
             <div class="item-section">
-                <img src="${product.product.image}" alt="product-img">
+                <img loading="lazy" src="${product.product.image}" alt="product-img">
                 
                 <div class="item-info">
                     <h4>${product.product.name}</h4>
                     <p>Arriving on: ${months[arrivalDate.getMonth()]} ${arrivalDate.getDate()}</p>
                     <p>Quantity: ${product.quantity}</p>
                     <button class="buy-again" data-product-id="${product.product.id}">
-                        <img src="images/icons/buy-again.png" alt="buy-again-icon">
+                        <img loading="lazy" src="images/icons/buy-again.png" alt="buy-again-icon">
                         <p>Buy it again</p>
                     </button>
                     <button class="tracking-hidden" data-product-index="${productIndex}" data-order-index="${orderIndex}">
@@ -124,12 +124,12 @@ buyAgainButtons.forEach((button) => {
     button.addEventListener('click',() => {
         // console.log("Button is clicked");
         button.innerHTML = `
-            <img src="images/icons/checkmark.png" alt="checkmark--v1"/>
+            <img loading="lazy" src="images/icons/checkmark.png" alt="checkmark--v1"/>
             <p>Added</p>
             `;
         setTimeout(() => {
             button.innerHTML = `
-                <img src="images/icons/buy-again.png" alt="buy--v1" />
+                <img loading="lazy" src="images/icons/buy-again.png" alt="buy--v1" />
                 <p>Buy it again</p>
             `;
         }, 1000);

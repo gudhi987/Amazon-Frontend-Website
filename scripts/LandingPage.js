@@ -36,11 +36,11 @@ function addProductToHTML(product,productIndex)
     container.innerHTML +=
     `
         <div class="child">
-            <img src="${product.image}" alt="product-image">
+            <img loading="lazy" src="${product.image}" alt="product-image">
             <p class="product-name">${product.name}</p>
 
             <div class="ratings">
-                <img src="${ratingImg}" alt="rating-image">
+                <img loading="lazy" src="${ratingImg}" alt="rating-image">
                 <p class="ratings-count">${product.rating.count}</p>
             </div>
             <p><b>${'$' + (product.priceCents/100).toFixed(2)}</b></p>
@@ -59,7 +59,7 @@ function addProductToHTML(product,productIndex)
             </select>
             
             <div class="add-to-cart">
-                <img src="images/icons/checkmark.png" alt="checkmark">
+                <img loading="lazy" src="images/icons/checkmark.png" alt="checkmark">
                 <p>Added to cart</p>
             </div>
 

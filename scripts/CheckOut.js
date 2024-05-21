@@ -52,7 +52,7 @@ function addProductToCart(item) {
     <div class="product-info delete-${product.id}">
         <h3>Delivery date: ${days[type1Delivery.getDay()]}, ${months[type1Delivery.getMonth()]} ${type1Delivery.getDate()}</h3>
         <div class="content-grid">
-            <img src="${item.product.image}" alt="">
+            <img loading="lazy" src="${item.product.image}" alt="">
             <div class="product-description">
                 <h4 class="product-name">${product.name}</h4>
                 <p class="product-price"><b>${'$' + (product.priceCents/100).toFixed(2)}</b></p>
